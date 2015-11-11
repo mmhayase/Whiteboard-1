@@ -9,6 +9,17 @@ module.exports = {
 
   attributes: {
 
+  	// Separation of Concerns
+  	name: {
+  		type: 'string'
+  	}
+
+  	// What does seperation of concerns mean for node? 
+  	// What's the difference between routes, app.js, and the model?
+  	text: {
+  		type: 'string'
+  	}
+
   }
 };
 

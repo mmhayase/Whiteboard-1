@@ -1,0 +1,57 @@
+{
+  "data": {
+    "question": [
+      {
+        "text": "I_have_a_bug_in_my_model_code_can_someone_take_a_look_?",
+        "createdAt": "2015-11-11T15:16:35.784Z",
+        "updatedAt": "2015-11-11T15:16:35.784Z",
+        "id": 1
+      },
+      {
+        "text": "I_have_a_bug_in_my_model_code_can_someone_take_a_look_?",
+        "createdAt": "2015-11-11T15:17:29.127Z",
+        "updatedAt": "2015-11-11T15:17:29.127Z",
+        "id": 2
+      },
+      {
+        "text": "I_have_a_bug_in_my_model_code_can_someone_take_a_look_?",
+        "createdAt": "2015-11-11T15:17:29.762Z",
+        "updatedAt": "2015-11-11T15:17:29.762Z",
+        "id": 3
+      },
+      {
+        "text": "I_have_a_bug_in_my_model_code_can_someone_take_a_look_?",
+        "createdAt": "2015-11-11T15:17:33.110Z",
+        "updatedAt": "2015-11-11T15:17:33.110Z",
+        "id": 4
+      },
+      {
+        "text": "I_have_a_bug_in_my_model_code_can_someone_take_a_look_?",
+        "createdAt": "2015-11-11T15:17:33.930Z",
+        "updatedAt": "2015-11-11T15:17:33.930Z",
+        "id": 5
+      }
+    ]
+  },
+  "schema": {
+    "question": {
+      "id": {
+        "type": "integer",
+        "autoIncrement": true,
+        "primaryKey": true,
+        "unique": true
+      },
+      "createdAt": {
+        "type": "datetime"
+      },
+      "updatedAt": {
+        "type": "datetime"
+      }
+    }
+  },
+  "counters": {
+    "question": {
+      "id": 5
+    }
+  }
+}
