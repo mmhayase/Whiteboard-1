@@ -1,9 +1,17 @@
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.1.1/jquery.mobile-1.1.1.min.js"></script>
+
 <div ng-app="Whiteboard" ng-controller="BaseCtrl">
-    <h1>Whiteboard</h1>
+    <h1>Whiteboard</h1><br><br>
+    <h2>Have a question?  Input it below.</h2>
+    <form>
+    	<input type="text" name="text" id="question"><br>
+    	<input type="submit" id="submit">
+    </form>
+    <h3>Questions asked:</h3>
     <ul>
         <li ng-repeat="question in questions">
-            <h2>{{question.name}}</h2>
-            {{question.text}}
+            <span>{{question.text}}</span>
         </li>
     </ul>
 </div>
