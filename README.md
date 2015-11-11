@@ -1,1 +1,3 @@
-This is a markdown file.
+# Whiteboard
+
+a [Sails](http://sailsjs.org) application
