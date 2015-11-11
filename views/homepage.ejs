@@ -2,7 +2,8 @@
     <h1>Whiteboard</h1>
     <ul>
         <li ng-repeat="question in questions">
-            <span>{{question.text}}</span>
+            <h2>{{question.name}}</h2>
+            {{question.text}}
         </li>
     </ul>
 </div>
