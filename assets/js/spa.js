@@ -10,6 +10,7 @@ angular.module('Whiteboard').controller('BaseCtrl', ['$scope', function ($scope)
 		switch (event.verb){
 			case 'created':
 				$scope.questions.push(event.data);
+				console.log("Here in sockets");
 				$scope.$apply();
 				break;
 		}

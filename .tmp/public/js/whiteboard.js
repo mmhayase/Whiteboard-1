@@ -3,12 +3,12 @@ $(function() {
 		e.preventDefault();
 		var question = $('#question').val();
 		// var photo = $('#')
-		console.log('here');
+		console.log('here in jquery');
 		$.ajax({
 			url: 'question/create?text='+question,
 			type: 'PUT',
 			success: function(result) {
-				$('#exRequests').html(JSON.stringify(result));
+			
 			}
 		})
 		return false;
