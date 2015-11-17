@@ -23,11 +23,10 @@
     "node": ">= 0.6.0",
     "npm": ">= 1.0.0"
   },
+  "keywords": [],
   "dependencies": {
     "ejs": "~0.8.4",
-    "express": "~3.4.4",
     "grunt": "0.4.2",
-    "grunt-cli": "^0.1.13",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-coffee": "~0.10.1",
     "grunt-contrib-concat": "~0.3.0",
