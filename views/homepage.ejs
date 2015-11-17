@@ -1,14 +1,6 @@
-
-
-<form class="msg">
 <div class="demo">
 <video id="myvideo"></video>
 </div>
-<input type="text" name="input" placeholder="message"/>
-<textarea name="textarea"></textarea>
-</form>
-
-<aside>Share chatroom link <a id="chat-room-link" target="_blank"></a></aside>
 
 <div ng-app="Whiteboard" ng-controller="BaseCtrl">
     <h1>Whiteboard</h1><br><br>
@@ -25,9 +17,9 @@
     </ul>
 </div>
 
-<script class="pre">
-	var session = Peer.initSession().addMedia('myvideo').connect(window.location.hash).on('media', function(e){
-		document.querySelector('div.demo').appendChild(e.video);
-	});
-</script>
+<!--Scripts that won't seem to go in the layout.ejs folder-->
+<script src="http://cdn.peerjs.com/0.3/peer.js"></script>
+
+
+
 
