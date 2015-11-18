@@ -13,4 +13,17 @@ $(function() {
 		})
 		return false;
 	})
+
+	$("#nameForm").submit(function(e) {
+		e.preventDefault();
+		var username = $('#username').val();
+		$.ajax({
+			url: 'home',
+			type: 'PUT',
+			success: function(result) {
+				window.location.href = "/home";
+			}
+		})
+		return false;
+	})
 })

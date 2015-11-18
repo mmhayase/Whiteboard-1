@@ -1,0 +1,46 @@
+#header{
+	background-color: #26B8C8;
+}
+#header h1{
+	color: #ffffff;
+	margin-left: 20px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-family: 'Brush Script MT', cursive;
+	margin-top: 0px;
+	margin-bottom: 0px; 
+}
+
+.btn{
+	background-color: #26B8C8;
+	margin-top: 10px;
+}
+
+.col-sm-4{
+	background-color:#E6E6EA;
+}
+
+.col-sm-8{
+	padding-top: 20px;
+	background-color:#F4F4F8;
+	color: #26B8C8;
+}
+
+.li {
+	background-color:#F4F4F8;
+	color: #26B8C8;
+}
+
+.active{
+	background-color: #F4F4F8;
+}
+
+.loginBox{
+	background-color:#E6E6EA;
+	width: 30%;
+	margin-top: 10px;
+	margin-left: 35%;
+	padding: 20px;
+	border: 2px solid #26B8C8;
+	border-radius: 25px;
+}
