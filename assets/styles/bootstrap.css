@@ -4069,7 +4069,8 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 }
 .nav-tabs > li {
   float: left;
-  margin-bottom: -1px;
+  margin-bottom: -2px;
+  margin-left: -1px;
 }
 .nav-tabs > li > a {
   line-height: 1.42857143;
@@ -4319,7 +4320,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .navbar-fixed-bottom {
   bottom: 0;
   margin-bottom: 0;
-  border-width: 1px 0 0;
+  border-width: 2px 0 0;
 }
 .navbar-brand {
   float: left;
