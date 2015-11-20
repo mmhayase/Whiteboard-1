@@ -24,6 +24,7 @@
 	padding-top: 20px;
 	background-color:#F4F4F8;
 	color: #26B8C8;
+
 }
 
 .li {
@@ -43,4 +44,10 @@
 	padding: 20px;
 	border: 2px solid #26B8C8;
 	border-radius: 25px;
+}
+
+#scrollable{
+	display: block;
+	height: 600px;
+	overflow: auto;
 }
