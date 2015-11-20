@@ -8,7 +8,7 @@ $(function() {
 			url: 'question/create?text='+question,
 			type: 'PUT',
 			success: function(result) {
-				window.location.href = "/home";
+				
 			}
 		})
 		return false;
