@@ -2,10 +2,9 @@
   "data": {
     "question": [
       {
-        "text": "What does seperation of concerns mean for node?What's the difference between routes, app.js, and the model?",
-        "name": "Separation of Concerns",
-        "createdAt": "2015-11-11T18:33:21.569Z",
-        "updatedAt": "2015-11-11T18:33:21.569Z",
+        "text": "Hello",
+        "createdAt": "2015-12-01T21:13:34.777Z",
+        "updatedAt": "2015-12-01T21:13:34.777Z",
         "id": 1
       }
     ]
