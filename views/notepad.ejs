@@ -1,0 +1,21 @@
+
+      <div id="firepad-container", class="firepad-container">
+        <div id ="firepad"></div>
+      </div>
+  <script>
+    function init() {
+      //// Initialize Firebase.
+       var firepadRef = new Firebase('https://torrid-inferno-3165.firebaseio.com');
+
+      //// Create CodeMirror (with line numbers and the JavaScript mode).
+      var codeMirror = CodeMirror(document.getElementById('firepad-container'), {
+        lineNumbers: true,
+      });
+      //// Create Firepad.
+      var firepad = Firepad.fromCodeMirror(firepadRef, codeMirror, {
+        defaultText: '// Text Editing with Firepad!\nfunction go() {\n  var message = "Oh hey dere world.";\n  console.log(message);\n}'
+      });
+    }
+
+    init();
+  </script>
