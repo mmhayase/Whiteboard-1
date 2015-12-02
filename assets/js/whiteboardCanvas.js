@@ -87,8 +87,7 @@ $(function(){
 		// not received in the socket.on('moving') event above
 
 		if(drawing){
-			console.log(canvastop + ', ' + canvasleft)
-
+			//console.log(canvastop + ', ' + canvasleft)
 			drawLine(prev.x, prev.y, e.pageX-canvasleft, e.pageY-canvastop);
 
 			prev.x = e.pageX-canvasleft;
