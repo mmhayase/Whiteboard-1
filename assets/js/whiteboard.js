@@ -51,7 +51,18 @@ function returnData(data){
 	return data;
 }
 
-function destroyCurrentQuestion(){}
+function destroyCurrentQuestion(questionID){
+	$.ajax({
+		url: 'question/destroy/'+questionID,
+		type: 'DELETE',
+		success: function(result) {
+				console.log("deleted a question")
+		},
+		failure: function(result) {
+				return false; 
+		}
+	})
+}
 
 function connectNextQuestion(){
 	$.ajax({

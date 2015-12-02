@@ -1,14 +1,6 @@
 {
   "data": {
-    "question": [
-      {
-        "text": "Lets see...",
-        "callID": "urcbu3ar6sd4e7b9",
-        "createdAt": "2015-12-01T23:58:50.315Z",
-        "updatedAt": "2015-12-01T23:58:50.315Z",
-        "id": 1238
-      }
-    ]
+    "question": []
   },
   "schema": {
     "question": {
