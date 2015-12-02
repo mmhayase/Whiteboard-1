@@ -13,7 +13,11 @@ angular.module('Whiteboard').controller('BaseCtrl', ['$scope', function ($scope)
 				console.log("Here in sockets");
 				$scope.$apply();
 				break;
+			case 'destroyed':
+				console.log("something was destroyed")
+				var index = $scope.questions.indexOf(event.data);
+				$scope.questions.splice(index,1);
+				$scope.$apply();
 		}
 	});
-
 }]);

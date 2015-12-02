@@ -49,6 +49,7 @@
       $('#step2').show();
     }
     function step3 (call) {
+      console.log("step3 made")
       // Hang up on an existing call if present
       if (window.existingCall) {
         window.existingCall.close();

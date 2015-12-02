@@ -51,3 +51,28 @@
 	height: 600px;
 	overflow: auto;
 }
+
+#firepad-container {
+  position: relative;
+  margin: 20px auto;
+  width: 700px;
+  height: 400px;
+  background: white;
+}
+
+#firepad-container .firepad-userlist {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  width: 175px;
+}
+
+#firepad-container .firepad {
+  position: absolute;
+  left: 0px;
+  right: 0;
+  height: 100%;
+  width: auto;
+}
