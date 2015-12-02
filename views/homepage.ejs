@@ -1,74 +1,99 @@
-<div ng-app="Whiteboard" ng-controller="BaseCtrl">
+<!doctype html>
+<!-- See http://www.firepad.io/docs/ for detailed embedding docs. -->
+<html>
 
-<div class="container">
-    <div class="row">
-           <div id= "header">
-                <h1>Whiteboard</h1>
+<head>
+  <meta charset="utf-8" />
+  <!-- Firebase -->
+  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+
+  <!-- CodeMirror and its JavaScript mode file -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/codemirror.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/mode/javascript/javascript.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.2.0/codemirror.css" />
+
+  <!-- Firepad -->
+  <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.2.0/firepad.css" />
+  <script src="https://cdn.firebase.com/libs/firepad/1.2.0/firepad.min.js"></script>
+
+  <link rel="stylesheet" href="https://cdn.firebase.com/libs/firepad/1.2.0/firepad.css" />
+
+</head>
+
+<body>
+    <div ng-app="Whiteboard" ng-controller="BaseCtrl">
+
+    <div class="container">
+        <div class="row">
+               <div id= "header">
+                    <h1>Whiteboard</h1>
+                </div>
+
+            <div class="col-sm-8">
+
+                <!-- VIDEO, WHITEBOARD, CHAT TABS -->
+
+                <ul class="nav nav-tabs">
+                    <li class="active"><a href="#tab1" data-toggle="tab">Video </a></li>
+
+                    <li><a href="#tab2" data-toggle="tab">Whiteboard</a></li>
+
+                    <li><a href="#tab3" data-toggle="tab">Text Editor </a></li>
+
+                    <li><a href="#tab4" data-toggle="tab">Question </a></li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane active" id="tab1">
+                        <%- partial ('video.ejs') %>
+                    </div>
+
+                    <div class="tab-pane" id="tab2">
+                        <%- partial ('whiteboard.ejs') %>
+                    </div>
+
+                    <div class="tab-pane" id="tab3">
+                        <%- partial ('notepad.ejs') %>
+                    </div>
+
+                    <div class="tab-pane" id="tab4">
+                        <p> QUESTION </p>
+                    </div>
+                </div>
             </div>
 
-        <div class="col-sm-8">
+            <div class="col-sm-4">
+                <table class="table table-hover">
 
-            <!-- VIDEO, WHITEBOARD, CHAT TABS -->
+                    <thead>
+                        <div class="col-sm-4">
+                            <h3>Queue</h3>
+                        </div>
 
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#tab1" data-toggle="tab">Video </a></li>
+                       <div class="col-sm-2">
+                        </div>
 
-                <li><a href="#tab2" data-toggle="tab">Whiteboard</a></li>
+                        <div class="col-sm-4">
+                           <%- partial ('newquestion.ejs') %>
+                        </div>
 
-                <li><a href="#tab3" data-toggle="tab">Chat </a></li>
+                    </thead>
 
-                <li><a href="#tab4" data-toggle="tab">Question </a></li>
-            </ul>
+                    <tbody id="scrollable">
+                        <!-- List of questions -->
+                        <tr ng-repeat="question in questions">
+                            <td>
+                            <p><strong> STUDENT (5:23 PM) </strong><p>
+                            <p>
+                            <span>{{question.text}}</span></p>
+                            </td>
+                        </tr>
+                    </tbody>
 
-            <div class="tab-content">
-                <div class="tab-pane active" id="tab1">
-                    <%- partial ('video.ejs') %>
-                </div>
-
-                <div class="tab-pane" id="tab2">
-                    <%- partial ('whiteboard.ejs') %>
-                </div>
-
-                <div class="tab-pane" id="tab3">
-                    <p> CHAT </p>
-                </div>
-
-                <div class="tab-pane" id="tab4">
-                    <p> QUESTION </p>
-                </div>
+                </table>
             </div>
-        </div>
+    </div>
 
-        <div class="col-sm-4">
-            <table class="table table-hover">
-
-                <thead>
-                    <div class="col-sm-4">
-                        <h3>Queue</h3>
-                    </div>
-
-                   <div class="col-sm-2">
-                    </div>
-
-                    <div class="col-sm-4">
-                       <%- partial ('newquestion.ejs') %>
-                    </div>
-
-                </thead>
-
-                <tbody id="scrollable">
-                    <!-- List of questions -->
-                    <tr ng-repeat="question in questions">
-                        <td>
-                        <p><strong> STUDENT (5:23 PM) </strong><p>
-                        <p>
-                        <span>{{question.text}}</span></p>
-                        </td>
-                    </tr>
-                </tbody>
-
-            </table>
-        </div>
-</div>
-
-</div>
+    </div>
+</body>
+</html>
