@@ -17,6 +17,10 @@ $(function() {
 		})
 		return false;
 	})
+
+	$("#nextInQueue").click(function(e){
+		nextInQueue();
+	})
 })
 
 function putQuestion(){
