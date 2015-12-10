@@ -17,20 +17,7 @@
  * The same command-line arguments are supported, e.g.:
  * `node app.js --silent --port=80 --prod`
  */
- 
-var app = require('express')();
-var http = require('http').Server(app);
-var io = require('socket.io')(http);
 
-// Ensure we're in the project directory, so relative paths work as expected
-// no matter where we actually lift from.
-process.chdir(__dirname);
-
-
-// Ensure socket io is working
-io.on('connection', function(socket){
-  console.log('a user connected');
-});
 
 // Ensure a "sails" can be located:
 (function() {
@@ -62,6 +49,7 @@ io.on('connection', function(socket){
       rc = function () { return {}; };
     }
   }
+  
 
 
   // Start server
