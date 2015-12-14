@@ -1,6 +1,7 @@
 $(function() {
 	$('#submit').click(function(e) {
 		e.preventDefault();
+		$('#myModal').modal('hide');
 		putQuestion();
 		return false;
 	})
@@ -21,6 +22,7 @@ $(function() {
 	$("#nextInQueue").click(function(e){
 		nextInQueue();
 	})
+
 })
 
 function putQuestion(){
