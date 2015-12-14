@@ -26,6 +26,11 @@ sails.io.on('connect', function (socket){
     // to everyone except the originating client.
     socket.broadcast.emit('moving', data);
   });
+
+    socket.on('clear', function (){
+      //clear everyones canvas
+      socket.broadcast.emit('clear')
+    })
 })
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)

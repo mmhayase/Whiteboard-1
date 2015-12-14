@@ -29,10 +29,26 @@ $(function(){
 	var clients = {};
 	var cursors = {};
 
+	var prev = {};
+
 	var socket = io.connect(url);
 
+
+	var clearButton = document.getElementById('clear');
+    clearButton.onclick = clear;
+
+    socket.on('clear', function(){
+    	clear()
+    })
+
+    function clear() {
+	    ctx.fillStyle = "#F4F4F8";
+	    ctx.rect(0, 0, 750, 600);
+	    ctx.fill();
+	    socket.emit('clear')
+	  }
+
 	socket.on('moving', function (data) {
-		console.log('ok got it')
 		if(! (data.id in clients)){
 			// a new user has come online. create a cursor for them
 			cursors[data.id] = $('<div class="cursor">').appendTo('#cursors');
@@ -57,7 +73,7 @@ $(function(){
 		clients[data.id].updated = $.now();
 	});
 
-	var prev = {};
+	
 
 	canvas.on('mousedown',function(e){
 		e.preventDefault();
@@ -80,7 +96,6 @@ $(function(){
 				'drawing': drawing,
 				'id': id
 			});
-			console.log('emitted')
 			lastEmit = $.now();
 		}
 
@@ -88,7 +103,7 @@ $(function(){
 		// not received in the socket.on('moving') event above
 
 		if(drawing){
-			//console.log(canvastop + ', ' + canvasleft)
+			//console.log(prev)
 			drawLine(prev.x, prev.y, e.pageX-canvasleft, e.pageY-canvastop);
 
 			prev.x = e.pageX-canvasleft;
@@ -117,6 +132,6 @@ $(function(){
 		ctx.moveTo(fromx, fromy);
 		ctx.lineTo(tox, toy);
 		ctx.stroke();
-		}
+	}
 
 });
