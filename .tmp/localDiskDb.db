@@ -1,14 +1,6 @@
 {
   "data": {
-    "question": [
-      {
-        "text": "two",
-        "callID": "mep48g4scyccv7vi",
-        "createdAt": "2015-12-02T00:49:13.502Z",
-        "updatedAt": "2015-12-02T00:49:13.502Z",
-        "id": 1243
-      }
-    ]
+    "question": []
   },
   "schema": {
     "question": {

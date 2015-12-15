@@ -35,16 +35,23 @@ $(function(){
 
 
 	var clearButton = document.getElementById('clear');
-    clearButton.onclick = clear;
+    clearButton.onclick = clearCanvas();
 
     socket.on('clear', function(){
-    	clear()
-    })
-
-    function clear() {
+    	//console.log('recieved clear event')
+    	ctx.beginPath();
 	    ctx.fillStyle = "#F4F4F8";
 	    ctx.rect(0, 0, 750, 600);
 	    ctx.fill();
+	    ctx.closePath();
+    })
+
+    function clearCanvas() {
+    	ctx.beginPath();
+	    ctx.fillStyle = "#F4F4F8";
+	    ctx.rect(0, 0, 750, 600);
+	    ctx.fill();
+	    ctx.closePath();
 	    socket.emit('clear')
 	  }
 
@@ -129,9 +136,11 @@ $(function(){
 	},10000);
 
 	function drawLine(fromx, fromy, tox, toy){
+		ctx.beginPath();
 		ctx.moveTo(fromx, fromy);
 		ctx.lineTo(tox, toy);
 		ctx.stroke();
+		ctx.closePath();
 	}
 
 });
