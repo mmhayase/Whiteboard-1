@@ -12,7 +12,9 @@ $(function() {
 
 	$("#nameForm").submit(function(e) {
 		e.preventDefault();
-		var username = $('#username').val();
+		var username = $('#username_input').val();
+		storeName(username);
+		storeTA();
 		$.ajax({
 			url: 'home',
 			type: 'PUT',
@@ -26,6 +28,10 @@ $(function() {
 	$("#nextInQueue").click(function(e){
 		nextInQueue();
 	})
+
+	if (window.location.pathname == "/home") {
+		checkTA();
+	};
 
 })
 
@@ -120,4 +126,35 @@ function nextInQueue(){
 		}
 	})
 }
+
+function checkTA(){
+	var is_ta = sessionStorage.getItem("is_ta");
+	if (is_ta == "false"){
+		$("#nextInQueue").hide();
+	}
+}
+
+function storeTA(){
+	var is_ta = $("#ta").prop('checked');
+	sessionStorage.setItem("is_ta", is_ta);
+}
+
+function storeName(username){
+	sessionStorage.setItem("username", username);
+}
+
+function getName(){
+	var tempUsername = sessionStorage.getItem("username");
+	if (tempUsername == null){
+		return "STUDENT";
+	}else{
+		return tempUsername;
+	}
+}
+
+// function getTA(){
+
+// }
+
+// var is_ta = $("#ta").prop('checked');
 
