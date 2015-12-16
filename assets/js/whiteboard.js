@@ -2,7 +2,12 @@ $(function() {
 	$('#submit').click(function(e) {
 		e.preventDefault();
 		putQuestion();
+		$('#myModal').modal('hide');
 		return false;
+	})
+
+	$('#questionClose').click(function(e){
+		$('#question').val('');
 	})
 
 	$("#nameForm").submit(function(e) {
@@ -21,18 +26,18 @@ $(function() {
 	$("#nextInQueue").click(function(e){
 		nextInQueue();
 	})
+
 })
 
 function putQuestion(){
 	var question = $('#question').val();
 	var callID = $('#my-id').text();
 	// var photo = $('#')
-	console.log('here in jquery');
 	$.ajax({
 		url: 'question/create?text='+question+'&callID='+callID,
 		type: 'PUT',
 		success: function(result) {
-				
+			$('#question').val('');	
 		}
 	})
 }
