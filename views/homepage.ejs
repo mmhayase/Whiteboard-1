@@ -84,7 +84,7 @@
                         <!-- List of questions -->
                         <tr ng-repeat="question in questions">
                             <td>
-                            <p><strong> STUDENT (5:23 PM) </strong><p>
+                            <p><strong> {{question.name}} ({{question.createdAt}}) </strong><p>
                             <p>
                             <span>{{question.text}}</span></p>
                             </td>

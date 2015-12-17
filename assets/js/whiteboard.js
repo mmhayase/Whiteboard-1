@@ -38,9 +38,10 @@ $(function() {
 function putQuestion(){
 	var question = $('#question').val();
 	var callID = $('#my-id').text();
-	// var photo = $('#')
+	var name = getName();
+
 	$.ajax({
-		url: 'question/create?text='+question+'&callID='+callID,
+		url: 'question/create?text='+question+'&callID='+callID+'&name='+name,
 		type: 'PUT',
 		success: function(result) {
 			$('#question').val('');	
