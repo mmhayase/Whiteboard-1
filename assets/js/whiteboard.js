@@ -1,4 +1,12 @@
 $(function() {
+	//create canvas variables for when we go to the next question
+	var canvas = $('#paper')
+	var ctx = canvas[0].getContext('2d');
+	var socket = io.connect(url);
+
+	// The URL of your web server (the port is set in app.js)
+	var url = 'http://whiteboard-iango.rhcloud.com/';
+
 	$('#submit').click(function(e) {
 		e.preventDefault();
 		putQuestion();
@@ -26,6 +34,9 @@ $(function() {
 	})
 
 	$("#nextInQueue").click(function(e){
+		//clear the canvas
+		clearCanvas();
+		//move to next question in queue
 		nextInQueue();
 	})
 
@@ -33,7 +44,18 @@ $(function() {
 		checkTA();
 	};
 
+	function clearCanvas() {
+    	ctx.beginPath();
+	    ctx.fillStyle = "#F4F4F8";
+	    ctx.rect(0, 0, 750, 600);
+	    ctx.fill();
+	    ctx.closePath();
+	    socket.emit('clear')
+	  }
+
+
 })
+
 
 function putQuestion(){
 	var question = $('#question').val();
