@@ -7,7 +7,7 @@ $(function(){
 	}
 
 	// The URL of your web server (the port is set in app.js)
-	var url = 'http://localhost:1337';
+	var url = 'http://whiteboard-iango.rhcloud.com/';
 
 	var doc = $(document),
 		win = $(window),
@@ -34,8 +34,11 @@ $(function(){
 	var socket = io.connect(url);
 
 
-	var clearButton = document.getElementById('clear');
-    clearButton.onclick = clearCanvas();
+	//var clearButton = document.getElementById('clear');
+    //clearButton.onclick = clearCanvas();
+    $('#clear').click(function(){
+    	clearCanvas();
+    });
 
     socket.on('clear', function(){
     	//console.log('recieved clear event')

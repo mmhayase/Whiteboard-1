@@ -2,6 +2,10 @@ $(function() {
 	//create canvas variables for when we go to the next question
 	var canvas = $('#paper')
 	var ctx = canvas[0].getContext('2d');
+	var socket = io.connect(url);
+
+	// The URL of your web server (the port is set in app.js)
+	var url = 'http://whiteboard-iango.rhcloud.com/';
 
 	$('#submit').click(function(e) {
 		e.preventDefault();
@@ -36,7 +40,9 @@ $(function() {
 	    ctx.rect(0, 0, 750, 600);
 	    ctx.fill();
 	    ctx.closePath();
+	    socket.emit('clear')
 	  }
+
 })
 
 
