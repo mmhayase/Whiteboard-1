@@ -152,10 +152,3 @@ function getName(){
 		return tempUsername;
 	}
 }
-
-// function getTA(){
-
-// }
-
-// var is_ta = $("#ta").prop('checked');
-

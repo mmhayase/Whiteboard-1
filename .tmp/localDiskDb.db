@@ -1,15 +1,6 @@
 {
   "data": {
-    "question": [
-      {
-        "text": "Ian",
-        "callID": "8wcbov1rf2athuxr",
-        "name": "Ian",
-        "createdAt": "2015-12-16T23:54:25.129Z",
-        "updatedAt": "2015-12-16T23:54:25.129Z",
-        "id": 1255
-      }
-    ]
+    "question": []
   },
   "schema": {
     "question": {
@@ -29,7 +20,7 @@
   },
   "counters": {
     "question": {
-      "id": 1255
+      "id": 1256
     }
   }
 }
