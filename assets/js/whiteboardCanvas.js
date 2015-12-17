@@ -32,7 +32,7 @@ $(function(){
 	var socket = io.connect(url);
 
 	socket.on('moving', function (data) {
-
+		console.log('ok got it')
 		if(! (data.id in clients)){
 			// a new user has come online. create a cursor for them
 			cursors[data.id] = $('<div class="cursor">').appendTo('#cursors');
@@ -49,7 +49,7 @@ $(function(){
 			// Draw a line on the canvas. clients[data.id] holds
 			// the previous position of this user's mouse pointer
 
-			drawLine(clients[data.id].x, clients[data.id].y, data.x-canvasleft, data.y-canvastop);
+			drawLine(clients[data.id].x, clients[data.id].y, data.x, data.y);
 		}
 
 		// Saving the current client state
@@ -74,12 +74,13 @@ $(function(){
 
 	doc.on('mousemove',function(e){
 		if($.now() - lastEmit > 30){
-			socket.emit('mousemove',{
+			socket.emit('moving',{
 				'x': e.pageX-canvasleft,
 				'y': e.pageY-canvastop,
 				'drawing': drawing,
 				'id': id
 			});
+			console.log('emitted')
 			lastEmit = $.now();
 		}
 
@@ -87,8 +88,7 @@ $(function(){
 		// not received in the socket.on('moving') event above
 
 		if(drawing){
-			console.log(canvastop + ', ' + canvasleft)
-
+			//console.log(canvastop + ', ' + canvasleft)
 			drawLine(prev.x, prev.y, e.pageX-canvasleft, e.pageY-canvastop);
 
 			prev.x = e.pageX-canvasleft;

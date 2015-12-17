@@ -2,12 +2,19 @@ $(function() {
 	$('#submit').click(function(e) {
 		e.preventDefault();
 		putQuestion();
+		$('#myModal').modal('hide');
 		return false;
+	})
+
+	$('#questionClose').click(function(e){
+		$('#question').val('');
 	})
 
 	$("#nameForm").submit(function(e) {
 		e.preventDefault();
-		var username = $('#username').val();
+		var username = $('#username_input').val();
+		storeName(username);
+		storeTA();
 		$.ajax({
 			url: 'home',
 			type: 'PUT',
@@ -21,18 +28,22 @@ $(function() {
 	$("#nextInQueue").click(function(e){
 		nextInQueue();
 	})
+
+	if (window.location.pathname == "/home") {
+		checkTA();
+	};
+
 })
 
 function putQuestion(){
 	var question = $('#question').val();
 	var callID = $('#my-id').text();
 	// var photo = $('#')
-	console.log('here in jquery');
 	$.ajax({
 		url: 'question/create?text='+question+'&callID='+callID,
 		type: 'PUT',
 		success: function(result) {
-				
+			$('#question').val('');	
 		}
 	})
 }
@@ -115,4 +126,35 @@ function nextInQueue(){
 		}
 	})
 }
+
+function checkTA(){
+	var is_ta = sessionStorage.getItem("is_ta");
+	if (is_ta == "false"){
+		$("#nextInQueue").hide();
+	}
+}
+
+function storeTA(){
+	var is_ta = $("#ta").prop('checked');
+	sessionStorage.setItem("is_ta", is_ta);
+}
+
+function storeName(username){
+	sessionStorage.setItem("username", username);
+}
+
+function getName(){
+	var tempUsername = sessionStorage.getItem("username");
+	if (tempUsername == null){
+		return "STUDENT";
+	}else{
+		return tempUsername;
+	}
+}
+
+// function getTA(){
+
+// }
+
+// var is_ta = $("#ta").prop('checked');
 

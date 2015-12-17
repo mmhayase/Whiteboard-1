@@ -18,9 +18,6 @@
  * `node app.js --silent --port=80 --prod`
  */
 
-// Ensure we're in the project directory, so relative paths work as expected
-// no matter where we actually lift from.
-process.chdir(__dirname);
 
 // Ensure a "sails" can be located:
 (function() {
@@ -52,6 +49,7 @@ process.chdir(__dirname);
       rc = function () { return {}; };
     }
   }
+  
 
 
   // Start server
