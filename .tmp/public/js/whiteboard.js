@@ -1,4 +1,8 @@
 $(function() {
+	//create canvas variables for when we go to the next question
+	var canvas = $('#paper')
+	var ctx = canvas[0].getContext('2d');
+
 	$('#submit').click(function(e) {
 		e.preventDefault();
 		$('#myModal').modal('hide');
@@ -20,10 +24,21 @@ $(function() {
 	})
 
 	$("#nextInQueue").click(function(e){
+		//clear the canvas
+		clearCanvas();
+		//move to next question in queue
 		nextInQueue();
 	})
 
+	function clearCanvas() {
+    	ctx.beginPath();
+	    ctx.fillStyle = "#F4F4F8";
+	    ctx.rect(0, 0, 750, 600);
+	    ctx.fill();
+	    ctx.closePath();
+	  }
 })
+
 
 function putQuestion(){
 	var question = $('#question').val();

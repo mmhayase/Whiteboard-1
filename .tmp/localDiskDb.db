@@ -1,35 +1,6 @@
 {
   "data": {
-    "question": [
-      {
-        "text": "two",
-        "callID": "mep48g4scyccv7vi",
-        "createdAt": "2015-12-02T00:49:13.502Z",
-        "updatedAt": "2015-12-02T00:49:13.502Z",
-        "id": 1243
-      },
-      {
-        "text": "test",
-        "callID": "v18byp9khjjor",
-        "createdAt": "2015-12-14T23:39:22.761Z",
-        "updatedAt": "2015-12-14T23:39:22.761Z",
-        "id": 1244
-      },
-      {
-        "text": "test",
-        "callID": "thwswfv2ece7mn29",
-        "createdAt": "2015-12-14T23:43:39.078Z",
-        "updatedAt": "2015-12-14T23:43:39.078Z",
-        "id": 1245
-      },
-      {
-        "text": "weeeee",
-        "callID": "thwswfv2ece7mn29",
-        "createdAt": "2015-12-14T23:43:49.578Z",
-        "updatedAt": "2015-12-14T23:43:49.578Z",
-        "id": 1246
-      }
-    ]
+    "question": []
   },
   "schema": {
     "question": {
