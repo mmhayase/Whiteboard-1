@@ -1,23 +1,6 @@
 {
   "data": {
-    "question": [
-      {
-        "text": "Hi",
-        "callID": "54rrhm1lef3qsemi",
-        "name": "",
-        "createdAt": "2015-12-18T00:24:21.013Z",
-        "updatedAt": "2015-12-18T00:24:21.013Z",
-        "id": 1260
-      },
-      {
-        "text": "Hi",
-        "callID": "bjzhyulbh11c3di",
-        "name": "",
-        "createdAt": "2015-12-18T00:27:15.011Z",
-        "updatedAt": "2015-12-18T00:27:15.011Z",
-        "id": 1261
-      }
-    ]
+    "question": []
   },
   "schema": {
     "question": {
