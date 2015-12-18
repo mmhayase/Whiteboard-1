@@ -40,21 +40,21 @@ $(function() {
 		//move to next question in queue
 		nextInQueue();
 		//clear the canvas
-		clearCanvas();
+		// clearCanvas();
 	})
 
 	if (window.location.pathname == "/home") {
 		checkTA();
 	};
 
-	function clearCanvas() {
-    	ctx.beginPath();
-	    ctx.fillStyle = "#F4F4F8";
-	    ctx.rect(0, 0, 750, 600);
-	    ctx.fill();
-	    ctx.closePath();
-	    io.socket.emit('clear')
-	  }
+	// function clearCanvas() {
+ //    	ctx.beginPath();
+	//     ctx.fillStyle = "#F4F4F8";
+	//     ctx.rect(0, 0, 750, 600);
+	//     ctx.fill();
+	//     ctx.closePath();
+	//     io.socket.emit('clear')
+	//   }
 
 
 })
