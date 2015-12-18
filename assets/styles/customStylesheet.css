@@ -18,6 +18,7 @@
 
 .col-sm-4{
 	background-color:#E6E6EA;
+	margin-bottom:23px;
 }
 
 .col-sm-8{
@@ -91,6 +92,6 @@
 #my-video{
 	z-index:10;
 	width: 20%;
-	top: -175px;
+	height: 20%;
 	left: 25px;
 }
