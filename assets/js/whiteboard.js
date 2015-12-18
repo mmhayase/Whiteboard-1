@@ -37,10 +37,10 @@ $(function() {
 	})
 
 	$("#nextInQueue").click(function(e){
-		//clear the canvas
-		clearCanvas();
 		//move to next question in queue
 		nextInQueue();
+		//clear the canvas
+		clearCanvas();
 	})
 
 	if (window.location.pathname == "/home") {
@@ -107,28 +107,28 @@ function destroyQuestion(questionID){
 	})
 }
 
-function connectNextQuestion(){
-	$.ajax({
-		url: 'question',
-		type: 'GET',
-		success: function(result) {
-				var firstQuestion = result[0];
-				var callID = firstQuestion.callID;
-				var call = peer.call(callID, window.localStream);
-				var firstQuestionID = firstQuestion.id;
+// function connectNextQuestion(){
+// 	$.ajax({
+// 		url: 'question',
+// 		type: 'GET',
+// 		success: function(result) {
+// 				var firstQuestion = result[0];
+// 				var callID = firstQuestion.callID;
+// 				var call = peer.call(callID, window.localStream);
+// 				var firstQuestionID = firstQuestion.id;
 
-				// Close existing call, if any, and call next in queue
-				step3(call);
+// 				// Close existing call, if any, and call next in queue
+// 				step3(call);
 
 
-				destroyQuestion(firstQuestionID); // Destroy next question to "bump" the queue
-		},
-		failure: function(result) {
-				return false; 
-		}
-	})
+// 				destroyQuestion(firstQuestionID); // Destroy next question to "bump" the queue
+// 		},
+// 		failure: function(result) {
+// 				return false; 
+// 		}
+// 	})
 	
-}
+// }
 
 // Calls functions to delete current question and then connect next call
 function nextInQueue(){
@@ -142,9 +142,13 @@ function nextInQueue(){
 		success: function(result) {
 				var firstQuestion = result[0];
 				var firstQuestionID = firstQuestion.id;
+				var callID = firstQuestion.callID;
+				var call = peer.call(callID, window.localStream);
+
+				// Close existing call, if any, and call next in queue
+				step3(call);
 
 				destroyQuestion(firstQuestionID); // Destroy next question to "bump" the queue
-				connectNextQuestion();
 		},
 		failure: function(result) {
 				console.log("Something went wrong connecting to next in queue")
