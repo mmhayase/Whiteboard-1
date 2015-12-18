@@ -55,7 +55,6 @@ $(function(){
 	    ctx.rect(0, 0, 750, 600);
 	    ctx.fill();
 	    ctx.closePath();
-	    // socket.emit('clear')
 	  }
 
 	// io.socket.on('moving', function (data) {
@@ -99,13 +98,7 @@ $(function(){
 	var lastEmit = $.now();
 
 	doc.on('mousemove',function(e){
-		// if($.now() - lastEmit > 30){
-		// 	socket.emit('moving',{
-		// 		'x': e.pageX-canvasleft,
-		// 		'y': e.pageY-canvastop,
-		// 		'drawing': drawing,
-		// 		'id': id
-		// 	});
+		if($.now() - lastEmit > 30){
 			lastEmit = $.now();
 		}
 

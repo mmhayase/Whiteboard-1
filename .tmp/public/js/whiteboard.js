@@ -1,5 +1,5 @@
 $(function() {
-	// //create canvas variables for when we go to the next question
+	//create canvas variables for when we go to the next question
 	// if (window.location.pathname == "/home") {
 	// 	var canvas = $('#paper')
 	// 	var ctx = canvas[0].getContext('2d');
