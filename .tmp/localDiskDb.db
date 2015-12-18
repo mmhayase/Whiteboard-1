@@ -1,31 +1,6 @@
 {
   "data": {
-    "question": [
-      {
-        "text": "lol",
-        "callID": "lysdne34pac92j4i",
-        "name": "STUDENT",
-        "createdAt": "2015-12-18T00:26:55.016Z",
-        "updatedAt": "2015-12-18T00:26:55.016Z",
-        "id": 1260
-      },
-      {
-        "text": "hey",
-        "callID": "pc6uvwv9j7mhd7vi",
-        "name": "lol",
-        "createdAt": "2015-12-18T00:36:55.268Z",
-        "updatedAt": "2015-12-18T00:36:55.268Z",
-        "id": 1261
-      },
-      {
-        "text": "test2",
-        "callID": "t55n97h9qeel8fr",
-        "name": "test",
-        "createdAt": "2015-12-18T00:38:47.208Z",
-        "updatedAt": "2015-12-18T00:38:47.208Z",
-        "id": 1262
-      }
-    ]
+    "question": []
   },
   "schema": {
     "question": {
