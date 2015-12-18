@@ -61,7 +61,6 @@
       });
       // UI stuff
       window.existingCall = call;
-      $('#their-id').text(call.peer);
       call.on('close', step2);
       $('#step1, #step2').hide();
       $('#step3').show();
