@@ -37,7 +37,7 @@ $(function() {
 
 function putQuestion(){
 	var question = $('#question').val();
-	var callID = $('#my-id').text();
+	var callID = getVideoID();
 	var name = getName();
 
 	$.ajax({
@@ -138,6 +138,15 @@ function checkTA(){
 function storeTA(){
 	var is_ta = $("#ta").prop('checked');
 	sessionStorage.setItem("is_ta", is_ta);
+}
+
+function getVideoID(){
+	var tempVideoID = sessionStorage.getItem("videoID");
+	if (tempVideoID == null){
+		return "NoID";
+	}else{
+		return tempVideoID;
+	}
 }
 
 function storeName(username){
