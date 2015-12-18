@@ -31,6 +31,7 @@ module.exports = {
 
 port: process.env.OPENSHIFT_NODEJS_PORT,
     host: process.env.OPENSHIFT_NODEJS_IP,
+    hookTimeout: 30000, //30 seconds
 
   /***************************************************************************
    * Your SSL certificate and key, if you want to be able to serve HTTP      *
