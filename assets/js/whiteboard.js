@@ -1,14 +1,14 @@
 $(function() {
 	//create canvas variables for when we go to the next question
-	if (window.location.pathname == "/home") {
-		var canvas = $('#paper')
-		var ctx = canvas[0].getContext('2d');
-		var socket = io.connect(url);
+	// if (window.location.pathname == "/home") {
+	// 	var canvas = $('#paper')
+	// 	var ctx = canvas[0].getContext('2d');
+	// 	var socket = io.connect();
 
-	};
+	// };
 
-	// // The URL of your web server (the port is set in app.js)
-	var url = 'http://whiteboard-iango.rhcloud.com/';
+	// // // The URL of your web server (the port is set in app.js)
+	// var url = 'http://whiteboard-iango.rhcloud.com/';
 
 	$('#submit').click(function(e) {
 		e.preventDefault();
@@ -53,7 +53,7 @@ $(function() {
 	    ctx.rect(0, 0, 750, 600);
 	    ctx.fill();
 	    ctx.closePath();
-	    socket.emit('clear')
+	    io.socket.emit('clear')
 	  }
 
 
