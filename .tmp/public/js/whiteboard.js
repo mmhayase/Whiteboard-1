@@ -1,8 +1,11 @@
 $(function() {
 	//create canvas variables for when we go to the next question
-	var canvas = $('#paper')
-	var ctx = canvas[0].getContext('2d');
-	var socket = io.connect(url);
+	if (window.location.pathname == "/home") {
+		var canvas = $('#paper')
+		var ctx = canvas[0].getContext('2d');
+		var socket = io.connect(url);
+
+	};
 
 	// The URL of your web server (the port is set in app.js)
 	var url = 'http://whiteboard-iango.rhcloud.com/';
@@ -40,11 +43,10 @@ $(function() {
 		nextInQueue();
 	})
 
-<<<<<<< HEAD
 	if (window.location.pathname == "/home") {
 		checkTA();
 	};
-=======
+
 	function clearCanvas() {
     	ctx.beginPath();
 	    ctx.fillStyle = "#F4F4F8";
@@ -53,7 +55,7 @@ $(function() {
 	    ctx.closePath();
 	    socket.emit('clear')
 	  }
->>>>>>> llodewyk-canvas
+
 
 })
 
