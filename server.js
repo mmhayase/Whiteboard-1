@@ -5,6 +5,27 @@ var fs      = require('fs');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 
+io.on('connect', function (socket){
+  //console.log('CONNECT');
+
+  io.on('disconnect', function (socket) {
+        //console.log('DISCONNECT');
+    });
+
+
+    io.on('moving', function (data) {
+
+    // This line sends the event (broadcasts it)
+    // to everyone except the originating client.
+    io.broadcast.emit('moving', data);
+  });
+
+    io.on('clear', function (){
+      //clear everyones canvas
+      io.broadcast.emit('clear')
+    })
+})
+
 
 
 /**

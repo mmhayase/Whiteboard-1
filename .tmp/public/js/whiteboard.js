@@ -40,11 +40,10 @@ $(function() {
 		nextInQueue();
 	})
 
-<<<<<<< HEAD
 	if (window.location.pathname == "/home") {
 		checkTA();
 	};
-=======
+
 	function clearCanvas() {
     	ctx.beginPath();
 	    ctx.fillStyle = "#F4F4F8";
@@ -53,7 +52,7 @@ $(function() {
 	    ctx.closePath();
 	    socket.emit('clear')
 	  }
->>>>>>> llodewyk-canvas
+
 
 })
 
