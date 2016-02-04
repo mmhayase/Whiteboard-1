@@ -1,4 +1,15 @@
 $(function() {
+	//create canvas variables for when we go to the next question
+	// if (window.location.pathname == "/home") {
+	// 	var canvas = $('#paper')
+	// 	var ctx = canvas[0].getContext('2d');
+	// 	var socket = io.connect(url);
+
+	// };
+
+	// // // The URL of your web server (the port is set in app.js)
+	// var url = 'http://whiteboard-iango.rhcloud.com/';
+
 	$('#submit').click(function(e) {
 		e.preventDefault();
 		putQuestion();
@@ -26,21 +37,36 @@ $(function() {
 	})
 
 	$("#nextInQueue").click(function(e){
+		//move to next question in queue
 		nextInQueue();
+		//clear the canvas
+		// clearCanvas();
 	})
 
 	if (window.location.pathname == "/home") {
 		checkTA();
 	};
 
+	// function clearCanvas() {
+ //    	ctx.beginPath();
+	//     ctx.fillStyle = "#F4F4F8";
+	//     ctx.rect(0, 0, 750, 600);
+	//     ctx.fill();
+	//     ctx.closePath();
+	//     io.socket.emit('clear')
+	//   }
+
+
 })
+
 
 function putQuestion(){
 	var question = $('#question').val();
-	var callID = $('#my-id').text();
-	// var photo = $('#')
+	var callID = getVideoID();
+	var name = getName();
+
 	$.ajax({
-		url: 'question/create?text='+question+'&callID='+callID,
+		url: 'question/create?text='+question+'&callID='+callID+'&name='+name,
 		type: 'PUT',
 		success: function(result) {
 			$('#question').val('');	
@@ -81,28 +107,28 @@ function destroyQuestion(questionID){
 	})
 }
 
-function connectNextQuestion(){
-	$.ajax({
-		url: 'question',
-		type: 'GET',
-		success: function(result) {
-				var firstQuestion = result[0];
-				var callID = firstQuestion.callID;
-				var call = peer.call(callID, window.localStream);
-				var firstQuestionID = firstQuestion.id;
+// function connectNextQuestion(){
+// 	$.ajax({
+// 		url: 'question',
+// 		type: 'GET',
+// 		success: function(result) {
+// 				var firstQuestion = result[0];
+// 				var callID = firstQuestion.callID;
+// 				var call = peer.call(callID, window.localStream);
+// 				var firstQuestionID = firstQuestion.id;
 
-				// Close existing call, if any, and call next in queue
-				step3(call);
+// 				// Close existing call, if any, and call next in queue
+// 				step3(call);
 
 
-				destroyQuestion(firstQuestionID); // Destroy next question to "bump" the queue
-		},
-		failure: function(result) {
-				return false; 
-		}
-	})
+// 				destroyQuestion(firstQuestionID); // Destroy next question to "bump" the queue
+// 		},
+// 		failure: function(result) {
+// 				return false; 
+// 		}
+// 	})
 	
-}
+// }
 
 // Calls functions to delete current question and then connect next call
 function nextInQueue(){
@@ -116,9 +142,13 @@ function nextInQueue(){
 		success: function(result) {
 				var firstQuestion = result[0];
 				var firstQuestionID = firstQuestion.id;
+				var callID = firstQuestion.callID;
+				var call = peer.call(callID, window.localStream);
+
+				// Close existing call, if any, and call next in queue
+				step3(call);
 
 				destroyQuestion(firstQuestionID); // Destroy next question to "bump" the queue
-				connectNextQuestion();
 		},
 		failure: function(result) {
 				console.log("Something went wrong connecting to next in queue")
@@ -139,6 +169,15 @@ function storeTA(){
 	sessionStorage.setItem("is_ta", is_ta);
 }
 
+function getVideoID(){
+	var tempVideoID = sessionStorage.getItem("videoID");
+	if (tempVideoID == null){
+		return "NoID";
+	}else{
+		return tempVideoID;
+	}
+}
+
 function storeName(username){
 	sessionStorage.setItem("username", username);
 }
@@ -151,10 +190,3 @@ function getName(){
 		return tempUsername;
 	}
 }
-
-// function getTA(){
-
-// }
-
-// var is_ta = $("#ta").prop('checked');
-

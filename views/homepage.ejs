@@ -40,8 +40,6 @@
                     <li><a href="#tab2" data-toggle="tab">Whiteboard</a></li>
 
                     <li><a href="#tab3" data-toggle="tab">Text Editor </a></li>
-
-                    <li><a href="#tab4" data-toggle="tab">Question </a></li>
                 </ul>
 
                 <div class="tab-content">
@@ -55,10 +53,6 @@
 
                     <div class="tab-pane" id="tab3">
                         <%- partial ('notepad.ejs') %>
-                    </div>
-
-                    <div class="tab-pane" id="tab4">
-                        <p> QUESTION </p>
                     </div>
                 </div>
             </div>
@@ -84,7 +78,8 @@
                         <!-- List of questions -->
                         <tr ng-repeat="question in questions">
                             <td>
-                            <p><strong> STUDENT (5:23 PM) </strong><p>
+
+                            <p><strong> {{question.name}} ({{question.createdAt | date:'MM/dd hh:mm a'}}) </strong><p>
                             <p>
                             <span>{{question.text}}</span></p>
                             </td>

@@ -12,21 +12,7 @@
 module.exports.bootstrap = function(cb) {
 
 
-sails.io.on('connect', function (socket){
-	//console.log('CONNECT');
 
-	socket.on('disconnect', function (socket) {
-        //console.log('DISCONNECT');
-    });
-
-
-    socket.on('moving', function (data) {
-
-    // This line sends the event (broadcasts it)
-    // to everyone except the originating client.
-    socket.broadcast.emit('moving', data);
-  });
-})
   // It's very important to trigger this callback method when you are finished
   // with the bootstrap!  (otherwise your server will never lift, since it's waiting on the bootstrap)
   cb();

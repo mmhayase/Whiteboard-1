@@ -3,6 +3,8 @@ angular.module('Whiteboard').controller('BaseCtrl', ['$scope', function ($scope)
 
 	io.socket.get('/question', function (data){
 		$scope.questions = data;
+		
+		// $scope.questions.converted = "thistext"
 		$scope.$apply();
 	});
 

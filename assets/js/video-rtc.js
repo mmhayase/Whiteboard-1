@@ -3,7 +3,8 @@
     // PeerJS object
     var peer = new Peer({ key: 'lwjd5qra8257b9', debug: 3});
     peer.on('open', function(){
-      $('#my-id').text(peer.id);
+      // $('#my-id').text(peer.id);
+      sessionStorage.setItem("videoID", peer.id);
     });
     // Receiving a call
     peer.on('call', function(call){
@@ -60,7 +61,6 @@
       });
       // UI stuff
       window.existingCall = call;
-      $('#their-id').text(call.peer);
       call.on('close', step2);
       $('#step1, #step2').hide();
       $('#step3').show();
